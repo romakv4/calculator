@@ -1,19 +1,18 @@
 const express = require("express");
 const bodyParser = require('body-parser');
+const { getTwoArgsOperation } = require("./operations");
 
 const app = express();
 app.use(bodyParser.json());
 
-app.post("/", function(request, response) {
+app.post("/two-args", function(request, response) {
     const { firstArg, secondArg, operation } = request.body;
-    if (operation === '+') {
-        response.status(200).json(firstArg + secondArg);
-    } else if (operation === '-') {
-        response.status(200).json(firstArg - secondArg);
-    } else if (operation === '/') {
-        response.status(200).json(firstArg / secondArg);
-    } else if (operation === '*') {
-        response.status(200).json(firstArg * secondArg);
+    try {
+        response
+            .status(200)
+            .json(getTwoArgsOperation(operation)(firstArg, secondArg));
+    } catch (e) {
+        response.status(400).json(e.message);
     }
 });
 
