@@ -8,7 +8,7 @@ const division = (dividend, divider) => dividend / divider;
 
 const exponentiation = (basis, power) => Math.pow(basis, power);
 
-const percent = (base, percent) => base * (percent / 100);
+const percent = (basis, percent) => basis * (percent / 100);
 
 const twoArgsOperations = {
     "+": addition,
