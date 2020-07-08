@@ -1,6 +1,6 @@
 const { getTwoArgsOperation } = require("./operations");
 
-describe.skip("Operation getter", () => {
+describe("Operation getter", () => {
     it("should return addition function", () => {
         expect(getTwoArgsOperation("+").name).toBe("addition");
     });
@@ -26,8 +26,12 @@ describe.skip("Operation getter", () => {
     });
 });
 
-describe.skip("Two arguments operation", () => {
+describe("Two arguments operation", () => {
     it("addition", () => {
         expect(getTwoArgsOperation("+")(1, 2)).toBe(3);
+    });
+
+    it("subtraction", () => {
+        expect(getTwoArgsOperation("-")(1, 2)).toBe(-1);
     });
 });
