@@ -16,6 +16,4 @@ app.post("/two-args", function(request, response) {
     }
 });
 
-app.listen(3000, () => {
-    console.log('App started on https://localhost:3000');
-});
+module.exports = app;
