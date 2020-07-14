@@ -1,4 +1,6 @@
-const addition = (arg1, arg2) => arg1 + arg2;
+const addition = (arg1, arg2) => {
+    return Number(arg1) + Number(arg2);
+};
 
 const subtraction = (minuend, subtrahend) => minuend - subtrahend;
 
